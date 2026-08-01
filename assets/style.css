@@ -416,6 +416,53 @@ section { position: relative; }
 }
 
 /* ============================================================
+   MOBIELE POLISH — uitsluitend telefoon; laat desktop ongemoeid
+   ============================================================ */
+@media (max-width: 700px) {
+  html, body { -webkit-tap-highlight-color: transparent; }
+
+  /* Nav: effen wit i.p.v. blur — voorkomt flikkeren bij scrollen */
+  .site-nav { background: #fff; backdrop-filter: none; -webkit-backdrop-filter: none; }
+  .site-nav.scrolled { box-shadow: 0 1px 10px rgba(12,58,102,0.05); }
+  .nav-inner { padding-block: 0.9rem; }
+
+  /* Hero strakker; beeld edge-to-edge bovenaan */
+  .hero { padding-top: 5.25rem; }
+  .hero-grid { gap: 1.7rem; }
+  .hero h1 { max-width: none; margin-bottom: 1.1rem; }
+  .hero-visual {
+    aspect-ratio: 16/11;
+    margin-inline: calc(-1 * var(--gutter));
+    border-radius: 0;
+  }
+  .hero .lead { margin-bottom: 1.6rem; }
+
+  /* Alle CTA-knoprijen: full-width, netjes gestapeld (ook waar inline flex-end stond) */
+  .cta-row { gap: 0.7rem; justify-content: flex-start !important; }
+  .cta-row .btn { width: 100%; justify-content: center; padding-block: 0.95rem; }
+  .cta-row .link-arrow { width: 100%; padding-top: 0.2rem; }
+
+  /* Compactere sectiekoppen */
+  .section-head { margin-bottom: 1.6rem; }
+
+  /* Page-hero iets meer lucht onder de nav */
+  .page-hero { padding-top: 6.5rem; }
+}
+
+@media (max-width: 560px) {
+  /* Team: foto boven de tekst, ruimer i.p.v. klein en gepropt */
+  .person { grid-template-columns: 1fr; gap: 1rem; }
+  .person-photo { width: 132px; aspect-ratio: 4/5; }
+  .person .role { line-height: 1.35; }
+
+  /* Feiten: iets meer ademruimte */
+  .facts-row .fact { padding: 1.6rem 1.2rem; }
+
+  /* Documenten-kaarten onder elkaar met wat meer hoogte */
+  .doc-card { padding: 1.2rem 1.3rem; }
+}
+
+/* ============================================================
    PRINT
    ============================================================ */
 @media print {
